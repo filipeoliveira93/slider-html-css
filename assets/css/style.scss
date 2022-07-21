@@ -1,0 +1,86 @@
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    width: 100vw;
+    // background: linear-gradient(20deg, #41e62cec 1%, rgba(35, 206, 169, 0.925) 99%);
+    // background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(0,212,255,1) 100%);
+    background-color: rgb(42, 58, 58);
+}
+.content {
+    height: 30rem;
+    background-color: aqua;
+    overflow: hidden;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.radio {
+    width: 20rem;
+    height: 40px;
+    // background-color: yellow;
+    // display: flex;
+    // justify-content: space-between;
+    // align-items: center;
+    display: none;
+}
+.slides {
+    height: 400px;
+    width: 300%;
+    overflow: hidden;
+    position: absolute;
+    display: flex;
+    // justify-content: space-between;
+    // align-items: center;
+    // flex-direction: row;
+    background-color: rgb(83, 211, 83);
+}
+
+.slide {
+    // display: block;
+    height: 100%;
+    width: 100%;
+    border: 1px solid;
+    transition: 0.6s;
+    // position: absolute;
+    // margin: 5px;
+    // align-items: center;
+    // margin-right: 5px;
+    // padding: 5px;
+    // overflow: hidden;
+    background-color: rgb(179, 106, 106);
+}
+
+.navigation {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    // justify-content: space-around;
+    align-items: center;
+}
+
+.item {
+    background-color: rgb(255, 255, 255);
+    width: 60px;
+}
+.bar {
+    width: 20px;
+    height: 6px;
+    border: solid 1px #fff;
+    margin: 0px 5px;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.bar:hover {
+    background-color: #fff;
+}
+
+#slide1:checked ~ s1 {
+    margin-left: 0;
+}

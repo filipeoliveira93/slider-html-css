@@ -1,0 +1,72 @@
+body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  width: 100vw;
+  background-color: rgb(42, 58, 58);
+}
+
+.content {
+  height: 30rem;
+  background-color: aqua;
+  overflow: hidden;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.radio {
+  width: 20rem;
+  height: 40px;
+  display: none;
+}
+
+.slides {
+  height: 400px;
+  width: 300%;
+  overflow: hidden;
+  position: absolute;
+  display: flex;
+  background-color: rgb(83, 211, 83);
+}
+
+.slide {
+  height: 100%;
+  width: 100%;
+  border: 1px solid;
+  transition: 0.6s;
+  background-color: rgb(179, 106, 106);
+}
+
+.navigation {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+}
+
+.item {
+  background-color: rgb(255, 255, 255);
+  width: 60px;
+}
+
+.bar {
+  width: 20px;
+  height: 6px;
+  border: solid 1px #fff;
+  margin: 0px 5px;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.bar:hover {
+  background-color: #fff;
+}
+
+#slide1:checked ~ s1 {
+  margin-left: 0;
+}
