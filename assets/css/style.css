@@ -14,38 +14,72 @@ body {
 }
 
 .container {
-  width: 100%;
-  max-width: 1200px;
+  background: red;
+  padding: 20px;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  background-color: red;
 }
-
-.main-card .cards {
+.container .main-card {
+  width: 200%;
+  background: grey;
   display: flex;
-  justify-content: space-around;
-  background-color: aquamarine;
+  justify-content: space-evenly;
 }
-
-.card {
-  background-color: rgb(255, 255, 255);
-  width: 50px;
+.container .main-card .cards {
+  display: flex;
+  height: 200px;
+  justify-content: space-between;
+  width: calc(50% - 10px);
+  margin: 0 20px;
+  align-items: center;
+  padding: 0 20px;
+  background: yellowgreen;
 }
-
-.cards .card .content .img {
-  height: 130px;
-  width: 130px;
+.container .main-card .cards .card {
+  max-width: 950px;
+  background: #fff;
+  height: 150px;
+  width: calc(16.6666666667% - 10px);
+  padding: 5px;
 }
-
-.cards .card .content .img img {
+.container .main-card .cards .card .content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.container .main-card .cards .card .content .img {
   height: 100%;
   width: 100%;
+  margin-bottom: 14px;
+}
+.container .main-card .cards .card .content .img img {
+  width: 100%;
+  height: 100%;
   object-fit: cover;
   border-radius: 50%;
 }
-
-.name-categ {
+.container .main-card .cards .card .content a {
+  display: block;
+  height: 100%;
+  width: 100%;
   text-decoration: none;
-  color: #000;
+}
+
+.buttons {
+  display: flex;
+  margin: 20px;
+  justify-content: center;
+}
+.buttons label {
+  height: 15px;
+  width: 15px;
+  background: rgb(245, 104, 104);
+  margin: 0 4px;
+  border-radius: 20px;
+}
+.buttons .active {
+  background: rgb(245, 104, 104);
+  width: 35px;
 }
