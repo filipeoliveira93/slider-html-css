@@ -15,20 +15,28 @@ body {
 
 .container {
   background: red;
+  width: 600px;
+  height: 40vh;
   padding: 20px;
   display: flex;
   flex-direction: column;
+  overflow: hidden;
+}
+.container input {
+  display: none;
 }
 .container .main-card {
-  width: 200%;
+  width: 150%;
   background: grey;
   display: flex;
   justify-content: space-evenly;
+  transition: all 0.5s ease-in-out;
 }
 .container .main-card .cards {
   display: flex;
   height: 200px;
-  justify-content: space-between;
+  justify-content: center;
+  gap: 5%;
   width: calc(50% - 10px);
   margin: 0 20px;
   align-items: center;
@@ -38,9 +46,12 @@ body {
 .container .main-card .cards .card {
   max-width: 950px;
   background: #fff;
-  height: 150px;
+  height: 200px;
   width: calc(16.6666666667% - 10px);
   padding: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .container .main-card .cards .card .content {
   display: flex;
@@ -55,8 +66,8 @@ body {
   margin-bottom: 14px;
 }
 .container .main-card .cards .card .content .img img {
-  width: 100%;
-  height: 100%;
+  width: 100px;
+  height: 100px;
   object-fit: cover;
   border-radius: 50%;
 }
@@ -78,8 +89,36 @@ body {
   background: rgb(245, 104, 104);
   margin: 0 4px;
   border-radius: 20px;
+  transition: all 0.5s ease;
 }
 .buttons .active {
   background: rgb(245, 104, 104);
   width: 35px;
+}
+
+.side {
+  background-color: aqua;
+  width: 600px;
+  display: flex;
+  justify-content: space-between;
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#one:checked ~ .buttons label.one {
+  width: 35px;
+}
+
+#two:checked ~ .buttons label.two {
+  width: 35px;
+}
+
+#two:checked ~ .buttons label.one {
+  width: 15px;
+}
+
+#two:checked ~ .main-card {
+  margin-left: -90%;
 }
