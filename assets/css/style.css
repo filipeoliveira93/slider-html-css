@@ -14,43 +14,43 @@ body {
 }
 
 .container {
-  background: red;
-  width: 600px;
-  height: 40vh;
-  padding: 20px;
+  width: 430px;
+  height: 200px;
   display: flex;
   flex-direction: column;
   overflow: hidden;
+}
+.container::-webkit-scrollbar {
+  display: none; /* for Chrome, Safari, and Opera */
 }
 .container input {
   display: none;
 }
 .container .main-card {
-  width: 150%;
-  background: grey;
+  width: 200%;
+  touch-action: pan-x;
+  -webkit-overflow-scrolling: touch;
   display: flex;
   justify-content: space-evenly;
   transition: all 0.5s ease-in-out;
 }
 .container .main-card .cards {
   display: flex;
-  height: 200px;
+  height: 100%;
   justify-content: center;
-  gap: 5%;
-  width: calc(50% - 10px);
-  margin: 0 20px;
+  width: 200%;
+  margin: 0;
   align-items: center;
-  padding: 0 20px;
-  background: yellowgreen;
+  padding: 0;
+  touch-action: pan-x;
 }
 .container .main-card .cards .card {
-  max-width: 950px;
   background: #fff;
   height: 200px;
-  width: calc(16.6666666667% - 10px);
-  padding: 5px;
+  width: 16.6666666667%;
   display: flex;
   align-items: center;
+  flex-direction: column;
   justify-content: center;
 }
 .container .main-card .cards .card .content {
@@ -65,60 +65,98 @@ body {
   width: 100%;
   margin-bottom: 14px;
 }
-.container .main-card .cards .card .content .img img {
+.container .main-card .cards .card .content a {
+  display: block;
+  height: 100%;
+  text-decoration: none;
+  color: #333339;
+}
+.container .main-card .cards .card .content a img {
   width: 100px;
   height: 100px;
   object-fit: cover;
   border-radius: 50%;
 }
-.container .main-card .cards .card .content a {
-  display: block;
-  height: 100%;
-  width: 100%;
-  text-decoration: none;
-}
 
+@media screen and (max-width: 668px) {
+  .container {
+    scroll-behavior: smooth;
+    touch-action: pan-x;
+    overflow-y: hidden;
+    overflow-x: scroll;
+  }
+  .container .buttons,
+.container .side {
+    display: none;
+  }
+}
 .buttons {
   display: flex;
-  margin: 20px;
   justify-content: center;
+  position: relative;
+  bottom: 20px;
 }
 .buttons label {
   height: 15px;
   width: 15px;
-  background: rgb(245, 104, 104);
-  margin: 0 4px;
+  background: #c4c4c4;
+  margin: 0 8px;
   border-radius: 20px;
-  transition: all 0.5s ease;
+  transition: all 0.3s ease;
 }
 .buttons .active {
-  background: rgb(245, 104, 104);
-  width: 35px;
-}
-
-.side {
-  background-color: aqua;
-  width: 600px;
-  display: flex;
-  justify-content: space-between;
-  position: absolute;
-  top: 45%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  background: #009739;
 }
 
 #one:checked ~ .buttons label.one {
-  width: 35px;
+  background: #009739;
 }
 
 #two:checked ~ .buttons label.two {
-  width: 35px;
+  background: #009739;
 }
 
 #two:checked ~ .buttons label.one {
-  width: 15px;
+  background: #c4c4c4;
 }
 
 #two:checked ~ .main-card {
-  margin-left: -90%;
+  margin-left: -100%;
+}
+
+.side {
+  width: 450px;
+  height: 10px;
+  display: flex;
+  justify-content: space-between;
+  position: absolute;
+  top: 46%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.side svg {
+  fill: #c4c4c4;
+}
+.side label {
+  height: 30px;
+  width: 30px;
+  margin: 0 4px;
+  cursor: pointer;
+}
+
+.main-card {
+  animation-duration: 2s;
+  animation-name: slidein;
+}
+
+@keyframes slidein {
+  0% {
+    margin-left: 0%;
+  }
+  50% {
+    margin-left: -20%;
+  }
+  100% {
+    margin-left: 0%;
+  }
 }
