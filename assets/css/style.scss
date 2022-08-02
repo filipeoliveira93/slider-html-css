@@ -7,7 +7,7 @@
 
 $primary-color: #c4c4c4;
 $green-color: #009739;
-$text-color: #333339;   
+$text-color: #333339;
 
 body {
     min-height: 100vh;
@@ -18,7 +18,7 @@ body {
     // background-color: rgb(191, 154, 154);
 }
 .container {
-    // background-color: aliceblue; 
+    // background-color: aliceblue;
     width: 430px;
     height: 200px;
     // padding: 20px;
@@ -34,8 +34,9 @@ body {
         display: none;
     }
     .main-card {
+        background-color: red;  
         width: 200%;
-
+        height: 200px;  
         touch-action: pan-x;
         -webkit-overflow-scrolling: touch;
         display: flex;
@@ -81,7 +82,7 @@ body {
                         height: 100%;
                         // width: 100%;
                         text-decoration: none;
-                        color: $text-color;       
+                        color: $text-color;
 
                         img {
                             width: 100px;
@@ -170,11 +171,11 @@ body {
 
 .main-card {
     animation-duration: 2s;
-    // animation-iteration-count: infinite; 
-    animation-name: slidein;    
+    // animation-iteration-count: infinite;
+    animation-name: slidein;
 }
 
-@keyframes slidein {    
+@keyframes slidein {
     0% {
         margin-left: 0%;
     }
@@ -182,6 +183,6 @@ body {
         margin-left: -20%;
     }
     100% {
-        margin-left: 0%;    
-    }   
+        margin-left: 0%;
+    }
 }

@@ -27,7 +27,9 @@ body {
   display: none;
 }
 .container .main-card {
+  background-color: red;
   width: 200%;
+  height: 200px;
   touch-action: pan-x;
   -webkit-overflow-scrolling: touch;
   display: flex;
